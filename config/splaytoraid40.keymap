@@ -12,12 +12,13 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #define QWR 0
-#define COL 1
+#define iOS 1
 #define NUM 2
-#define FUN 3
-#define NAV 4
-#define SET 5
-#define RGB 6
+#define iOS 3
+#define FUN 4
+#define NAV 5
+#define SET 6
+#define RGB 7
 
 &lt {
 	quick_tap_ms = <200>;
@@ -46,61 +47,61 @@
 			timeout-ms = <20>;
 			key-positions = <11 12>;
 			bindings = <&kp ESC>;
-			layers = <QWR COL>;
+			layers = <QWR iOS>;
 		};
 		combo_tab {
 			timeout-ms = <20>;
 			key-positions = <12 13>;
 			bindings = <&kp TAB>;
-			layers = <QWR COL>;
+			layers = <QWR iOS>;
 		};
 		combo_del {
 			timeout-ms = <20>;
 			key-positions = <15 16>;
 			bindings = <&kp DEL>;
-			layers = <QWR COL>;
+			layers = <QWR iOS>;
 		};
 		combo_bspc {
 			timeout-ms = <20>;
 			key-positions = <16 17>;
 			bindings = <&kp BSPC>;
-			layers = <QWR COL>;
+			layers = <QWR iOS>;
 		};
 		combo_enter {
 			timeout-ms = <20>;
 			key-positions = <17 18>;
 			bindings = <&kp RET>;
-			layers = <QWR COL>;
+			layers = <QWR iOS>;
 		};
 		combo_ae {
 			timeout-ms = <20>;
 			key-positions = <0 10>;
 			bindings = <&kp RA(Q)>;
-			layers = <QWR COL>;
+			layers = <QWR iOS>;
 		};
 		combo_oe {
 			timeout-ms = <20>;
 			key-positions = <8 18>;
 			bindings = <&kp RA(P)>;
-			layers = <QWR COL>;
+			layers = <QWR iOS>;
 		};
 		combo_ue {
 			timeout-ms = <20>;
 			key-positions = <6 16>;
 			bindings = <&kp RA(Y)>;
-			layers = <QWR COL>;
+			layers = <QWR iOS>;
 		};
 		combo_ss {
 			timeout-ms = <20>;
 			key-positions = <1 11>;
 			bindings = <&kp RA(S)>;
-			layers = <QWR COL>;
+			layers = <QWR iOS>;
 		};
 		combo_caps-word {
 			timeout-ms = <20>;
 			key-positions = <13 16>;
 			bindings = <&caps_word>;
-			layers = <QWR COL>;
+			layers = <QWR iOS>;
 		};
 	};
 
@@ -154,19 +155,31 @@
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 
-		colemak_layer {
-			label = "Colemak";
+		iOS_layer {
+			label = "iOS";
 			bindings = <
 			&kp Q		&kp W		&kp F		&kp P		&kp B				&kp J			&kp L			&kp U		&kp Y		&kp SEMI
 			&hl LGUI A	&hl LALT R	&hl LCTRL S	&hs LSHFT T	&hl RALT G			&hr RALT M		&hs RSHFT N		&hr RCTRL E	&hr LALT I	&hr LGUI O
 			&kp Z		&kp X		&kp C		&kp D		&kp V				&kp K			&kp H			&kp COMMA	&kp DOT		&kp FSLH
-									&lt RGB ESC	&lt SET TAB	&lt NAV RET			&lt NUM SPACE	&lt FUN BSPC	&kp DEL
+									&lt RGB ESC	&lt SET TAB	&lt iOS RET			&lt iOS SPACE	&lt FUN BSPC	&kp DEL
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+		
 		};
 
 		numbers_layer {
 			label = "Numbers";
+			bindings = <
+			&kp MINUS	&kp N7		&kp N8		&kp N9		&kp N0				&none		&none		&none		&none		&none
+			&kp EQUAL	&kp N4		&kp N5		&kp N6		&kp SQT				&none		&kp RSHFT	&kp RCTRL	&kp LALT	&kp LGUI
+			&kp GRAVE	&kp N1		&kp N2		&kp N3		&kp BSLH			&none		&none		&none		&none		&none
+									&none		&none		&none				&none		&none		&none
+			>;
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+		};
+
+		numbers_layer_iOS {
+			label = "Numbers_iOS";
 			bindings = <
 			&kp MINUS	&kp N7		&kp N8		&kp N9		&kp N0				&none		&none		&none		&none		&none
 			&kp EQUAL	&kp N4		&kp N5		&kp N6		&kp SQT				&none		&kp RSHFT	&kp RCTRL	&kp LALT	&kp LGUI
